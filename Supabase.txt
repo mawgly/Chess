@@ -1,0 +1,924 @@
+Это мой проект шахмат, я хочу добавить кнопку играть онлайн, при ее нажатии мы должны попасть на страницу регистрации, при регистрации нужно ввести имя пользователя, почту и пароль,
+если пользователь уже зарегистрирован, то он попадает в комнату ожидания, где отображаются все онлайн игроки, если ищут игру хотя бы два человека открывается игра где они могут играть, 
+все онлайн функции я хочу вынести в отдельный файл. Регистрацию и онлайн функции я хочу реализовать через supaabase.
+
+api к supabase
+URL
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxaXN1b21rcW9ydmhmc295bGZsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEyODk4ODQsImV4cCI6MjA1Njg2NTg4NH0.cXb7Mzfp6hWCCLAJZfuUbeoO9nzECSxlPN6FCr5wZtk
+
+пришли SQL инструкцию
+
+
+3,7
+Я хочу созать игру шахматы, в ней два варианта игры, Игра в двоем, Игра с ИИ все необходимые файлы уже в папке. 
+chess.js
+chessboard.css
+chessboard.js
+jquery-3.6.0.min.js
+stockfish.js@chess.js @chessboard.css @chessboard.js @jquery-3.6.0.min.js @stockfish.js 
+
+тут спрайты
+img\chesspieces
+@bb.png @bk.png @bn.png @bp.png @bq.png @br.png @wb.png @wk.png @wn.png @wp.png @wq.png @wr.png 
+
+тут звуки
+Sound
+
+Сделай темную тему и современный дизайн, создай все необходимые файлы
+
+V2
+Я хочу созать HTML игру шахматы, в ней три варианта игры, Игра в двоем, Игра с ИИ, Третий режим онлайн игры в режиме гость
+все необходимые файлы уже в папке. При нажатии Онлайн игра должна появлять онлайн комната, в который видны пользователи онлайн и кнопка 
+Начать поиск соперника, если два пользователя в комнате нажали то между ними начинается игра
+
+chess.js
+chessboard.css
+chessboard.js
+jquery-3.6.0.min.js
+stockfish.js@chess.js @chessboard.css @chessboard.js @jquery-3.6.0.min.js @stockfish.js 
+
+тут спрайты
+img\chesspieces
+@bb.png @bk.png @bn.png @bp.png @bq.png @br.png @wb.png @wk.png @wn.png @wp.png @wq.png @wr.png 
+
+тут звуки
+Sound
+
+
+сделай темный дизайн сначала должна показываться доска, над ней меню выбора варианта игры
+
+https://vlrsxsoarblthcrvsekc.supabase.co
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZscnN4c29hcmJsdGhjcnZzZWtjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEyOTM4MjYsImV4cCI6MjA1Njg2OTgyNn0.eaaYC4F5lp06DXJYdxmKGIshxno6Aszmi4yggwOtyIc
+
+Пришли sql инструкцию
+ 
+V3
+Я хочу созать HTML игру шахматы, в ней три варианта игры, Игра в двоем, Игра с ИИ, Третий режим онлайн игры в режиме гость
+При нажатии Онлайн игра должна появлять онлайн комната, в который видны пользователи онлайн и кнопка 
+Начать поиск соперника, если два пользователя в комнате нажали то между ними начинается игра
+все необходимые файлы уже в папке.
+chess.js
+chessboard.css
+chessboard.js
+jquery-3.6.0.min.js
+stockfish.js@chess.js @chessboard.css @chessboard.js @jquery-3.6.0.min.js @stockfish.js 
+
+тут спрайты
+img\chesspieces
+@bb.png @bk.png @bn.png @bp.png @bq.png @br.png @wb.png @wk.png @wn.png @wp.png @wq.png @wr.png 
+
+тут звуки
+Sound
+
+
+сделай темный фон и очень красивый дизайн 
+сначала должна показываться доска, над ней меню кнопки выбора варианта игры 
+
+https://ofmhcxstasvmfwxkutxg.supabase.co 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9mbWhjeHN0YXN2bWZ3eGt1dHhnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEyOTU5MjQsImV4cCI6MjA1Njg3MTkyNH0.pNXsdV9OfbGfNSA3xcPzcXzJoXmT8Juj0mh2sSfoe-8
+
+Пришли sql инструкцию
+
+
+
+Я бы хотел добавить онлайн игру и регистрацию. 
+
+Реализация онлайн игры:
+чтобы можно было нажать начать поиск игры, если хотя бы два человека ищут игру, то начинается игра цвет выбирается случайно
+
+V4
+Я хочу созать HTML игру шахматы, в ней должно быть Игра в двоем и режим онлайн игры в режиме гость
+При нажатии Онлайн игра должна появляться онлайн комната, в который видны пользователи онлайн и кнопка "Начать поиск соперника", если два пользователя в комнате нажали эту кнопку то между ними начинается игра
+все необходимые файлы уже в папке.
+chess.js
+chessboard.css
+chessboard.js
+jquery-3.6.0.min.js
+@chess.js @chessboard.css @chessboard.js @jquery-3.6.0.min.js 
+
+тут спрайты
+img\chesspieces
+@bb.png @bk.png @bn.png @bp.png @bq.png @br.png @wb.png @wk.png @wn.png @wp.png @wq.png @wr.png 
+
+тут звуки
+Sound
+
+сделай темный фон и очень красивый дизайн 
+сначала должна показываться доска, над ней меню кнопки выбора варианта игры 
+
+https://thwltkqcmlgmhpsdlbld.supabase.co 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRod2x0a3FjbWxnbWhwc2RsYmxkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEzMzIxNjIsImV4cCI6MjA1NjkwODE2Mn0.GNSM2Xph5V0XpcJt6qCl_c69B5abh1LozTAvYBbs2q8
+
+
+V5
+Я хочу созать HTML игру шахматы, в ней должно быть Игра в двоем и режим онлайн игры в режиме гость
+При нажатии Онлайн игра должна появляться онлайн комната, в который видны пользователи онлайн и кнопка "Начать поиск соперника", если два пользователя в комнате нажали эту кнопку то между ними начинается игра
+все необходимые файлы уже в папке.
+chess.js
+chessboard.css
+chessboard.js
+jquery-3.6.0.min.js
+@chess.js @chessboard.css @chessboard.js @jquery-3.6.0.min.js 
+
+тут спрайты
+img\chesspieces
+@bb.png @bk.png @bn.png @bp.png @bq.png @br.png @wb.png @wk.png @wn.png @wp.png @wq.png @wr.png 
+
+тут звуки
+Sound
+
+сделай темный фон и очень красивый дизайн 
+сначала должна показываться доска, над ней меню кнопки выбора варианта игры 
+
+https://thwltkqcmlgmhpsdlbld.supabase.co 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRod2x0a3FjbWxnbWhwc2RsYmxkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEzMzIxNjIsImV4cCI6MjA1NjkwODE2Mn0.GNSM2Xph5V0XpcJt6qCl_c69B5abh1LozTAvYBbs2q8
+
+Пришли sql инструкцию
+
+
+Пришли полный код index.html game.js online.js  чтобы мне не пришлось их редактировать 
+
+
+код index.html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mawgly Chess</title>
+    <link rel="stylesheet" href="./chessboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00adb5;
+            --secondary-color: #f5f5f5;
+            --bg-color: #222831;
+            --board-color: #393e46;
+            --text-color: #f5f5f5;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: var(--bg-color);
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        body.light-theme {
+            --bg-color: #f5f5f5;
+            --board-color: #ffffff;
+            --text-color: #222831;
+        }
+
+        #game-container {
+            padding: 20px;
+            background: var(--board-color);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            position: relative;
+            display: none;
+            transition: var(--transition);
+        }
+
+        #menu-container, #difficulty-menu, #settings-menu {
+            padding: 20px;
+            background: var(--board-color);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            position: relative;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        #difficulty-menu {
+            display: none;
+        }
+
+        #settings-menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 300px;
+            background: var(--board-color);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 20px;
+            text-align: left;
+            transition: var(--transition);
+            z-index: 10;
+        }
+
+        #menu-title {
+            font-size: 1.8em;
+            color: var(--text-color);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            margin: 0;
+            font-weight: 700;
+            z-index: 5;
+            transition: var(--transition);
+        }
+
+        #settings-title {
+            font-size: 1.5em;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        #status {
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            color: var(--text-color);
+            text-align: center;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        #board, #menu-board {
+            width: 560px;
+            height: 560px;
+            transition: transform 0.3s ease;
+        }
+
+        .square-55d63:hover {
+            transform: scale(1.02);
+            transition: transform 0.2s ease;
+        }
+
+        .controls, .menu-controls {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .menu-controls {
+            margin-bottom: 60px;
+        }
+
+        .difficulty-controls {
+            margin-top: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .color-choice {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .color-choice p {
+            margin: 0;
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+
+        .color-choice img {
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            transition: var(--transition);
+            border-radius: 10px;
+            opacity: 0.8;
+        }
+
+        .color-choice img:hover {
+            opacity: 1;
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .settings-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .slider-container {
+            margin: 20px 0;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 8px;
+            background: #ddd;
+            border-radius: 5px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        input[type="range"]:hover::-webkit-slider-thumb {
+            background: #00d4dd;
+        }
+
+        #difficulty-description {
+            font-size: 1.2em;
+            color: var(--text-color);
+            margin-top: 10px;
+            transition: var(--transition);
+        }
+
+        button {
+            padding: 12px 24px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            font-size: 16px;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        button:hover {
+            background: #00d4dd;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active {
+            background: #008c93;
+            transform: translateY(0);
+            box-shadow: var(--shadow);
+        }
+
+        .settings-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 140px;
+            height: 40px;
+            background: var(--primary-color);
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 30px;
+        }
+
+        .settings-button::before {
+            content: '⚙️';
+            position: absolute;
+            left: 10px;
+            font-size: 20px;
+            transition: var(--transition);
+        }
+
+        .settings-button:hover {
+            background: #00d4dd;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .settings-button:hover::before {
+            transform: rotate(90deg);
+        }
+
+        .move-history {
+            position: absolute;
+            left: -200px;
+            top: 0;
+            width: 180px;
+            height: 560px;
+            background: var(--board-color);
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow-y: auto;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .timer {
+            font-size: 24px;
+            text-align: center;
+            margin: 10px 0;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .check-highlight {
+            background: rgba(255, 0, 0, 0.5) !important;
+        }
+
+        .move-dot {
+            position: relative;
+        }
+
+        .move-dot::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .move-dot.white::after {
+            background: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="settings-button" onclick="toggleSettingsMenu()">Настройки</div>
+    <div id="menu-title">Mawgly Chess</div>
+
+    <!-- Начальное меню -->
+    <div id="menu-container">
+        <div class="menu-controls">
+            <button onclick="startTwoPlayerGame()">Играть вдвоём</button>
+            <button onclick="showDifficultyMenu()">Играть с ИИ</button>
+        </div>
+        <div id="menu-board"></div>
+    </div>
+
+    <!-- Меню выбора сложности и цвета -->
+    <div id="difficulty-menu" style="display: none;">
+        <div id="difficulty-title">Игра с ИИ</div>
+        <div class="difficulty-controls">
+            <div class="slider-container">
+                <input type="range" min="1" max="20" value="10" id="difficulty-slider" oninput="updateDifficultyDescription()">
+                <div id="difficulty-description">Средний 10: уровень любителя, глубина 10.</div>
+            </div>
+            <div class="color-choice">
+                <p>Выберите цвет</p>
+                <div>
+                    <img src="https://chessboardjs.com/img/chesspieces/wikipedia/wK.png" alt="Белый король" onclick="startAIGame('w')">
+                    <img src="https://chessboardjs.com/img/chesspieces/wikipedia/bK.png" alt="Черный король" onclick="startAIGame('b')">
+                </div>
+            </div>
+        </div>
+        <div id="menu-board"></div>
+    </div>
+
+    <!-- Меню настроек -->
+    <div id="settings-menu" style="display: none;">
+        <div id="settings-title">Настройки</div>
+        <div class="settings-controls">
+            <button onclick="toggleTheme()" id="theme-btn">Светлая тема</button>
+            <button id="toggle-moves" onclick="toggleMoveHighlight()">Показывать возможные ходы: Выкл</button>
+            <button onclick="toggleSettingsMenu()">Закрыть</button>
+        </div>
+    </div>
+
+    <!-- Игровой контейнер -->
+    <div id="game-container" style="display: none;">
+        <div id="status">Ход белых</div>
+        <div class="timer" id="black-timer">Черные: 10:00</div>
+        <div id="board"></div>
+        <div class="timer" id="white-timer">Белые: 10:00</div>
+        
+        <div class="controls">
+            <button onclick="undoMove()">↩️ Отменить</button>
+            <button onclick="newGame()">🔄 Новая игра</button>
+            <button onclick="backToMenu()">🏠 Меню</button>
+        </div>
+    </div>
+
+    <div class="move-history" id="move-history">
+        <h3>История ходов</h3>
+    </div>
+
+    <!-- Звуковые эффекты -->
+    <audio id="move-sound" src="./sound/Move.mp3" preload="auto"></audio>
+    <audio id="lowtime-sound" src="./sound/lowtime.mp3" preload="auto"></audio>
+    <audio id="lose-sound" src="./sound/lose.mp3" preload="auto"></audio>
+    <audio id="win-sound" src="./sound/win.mp3" preload="auto"></audio>
+    <audio id="capture-sound" src="./sound/capture.mp3" preload="auto"></audio>
+    <audio id="draw-sound" src="./sound/draw.mp3" preload="auto"></audio>
+
+    <!-- Подключение необходимых библиотек -->
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="./chess.js"></script>
+    <script src="./chessboard.js"></script>
+    <script src="./game.js"></script>
+</body>
+</html>
+
+
+код game.js
+let stockfish = new Worker('./stockfish.js');
+stockfish.onmessage = function(event) {
+    let message = event.data;
+    if (message.startsWith('bestmove')) {
+        let bestMove = message.split(' ')[1];
+        makeAIMove(bestMove);
+    } else {
+        console.log('Stockfish message:', message);
+    }
+};
+
+const config = {
+    draggable: true,
+    position: 'start',
+    pieceTheme: 'https://chessboardjs.com/img/chesspieces/wikipedia/{piece}.png',
+    onDragStart: onDragStart,
+    onDrop: onDrop,
+    onSnapEnd: onSnapEnd,
+    showNotation: true,
+    animationDuration: 300
+};
+
+const menuConfig = {
+    position: 'start',
+    pieceTheme: 'https://chessboardjs.com/img/chesspieces/wikipedia/{piece}.png',
+    showNotation: true
+};
+
+let game = new Chess();
+let board = Chessboard('board', config);
+let menuBoard = Chessboard('menu-board', menuConfig);
+let whiteTime = 600;
+let blackTime = 600;
+let initialTime = 600;
+let timerInterval;
+let isLightTheme = false;
+let moveHistory = [];
+let isTwoPlayerMode = false;
+let hasBlackMoved = false;
+let aiSkillLevel = 10;
+let aiDepth = 10;
+let showMoveHighlights = false;
+let playerColor = 'w';
+let lowTimePlayed = false;
+
+const moveSound = document.getElementById('move-sound');
+const lowtimeSound = document.getElementById('lowtime-sound');
+const loseSound = document.getElementById('lose-sound');
+const winSound = document.getElementById('win-sound');
+const captureSound = document.getElementById('capture-sound');
+const drawSound = document.getElementById('draw-sound');
+
+// Отключение правой кнопки мыши на шахматной доске
+document.addEventListener('contextmenu', function(event) {
+    if (event.target.closest('#game-container') || event.target.closest('#board')) {
+        event.preventDefault();
+    }
+});
+
+function updateStatus() {
+    const statusElement = document.getElementById('status');
+    let statusText = `Ход ${game.turn() === 'w' ? 'белых' : 'черных'}`;
+
+    if (game.in_checkmate()) {
+        statusText = `Мат! ${game.turn() === 'w' ? 'Черные' : 'Белые'} победили!`;
+        stopTimers();
+        if (isTwoPlayerMode) {
+            if (winSound && game.turn() === 'w') winSound.play();
+            if (loseSound && game.turn() !== 'w') loseSound.play();
+        } else {
+            if (loseSound && game.turn() === playerColor) loseSound.play();
+            if (winSound && game.turn() !== playerColor) winSound.play();
+        }
+    } else if (game.in_draw()) {
+        statusText = "Ничья!";
+        stopTimers();
+        if (drawSound) drawSound.play();
+    } else if (game.in_check()) {
+        statusText += " Шах!";
+    } else if (isTwoPlayerMode) {
+        if (whiteTime <= 0) {
+            statusText = "Время белых вышло! Черные победили!";
+            stopTimers();
+            if (winSound) winSound.play();
+        } else if (blackTime <= 0) {
+            statusText = "Время черных вышло! Белые победили!";
+            stopTimers();
+            if (loseSound) loseSound.play();
+        } else if ((whiteTime <= initialTime / 10 || blackTime <= initialTime / 10) && !lowTimePlayed) {
+            if (lowtimeSound) lowtimeSound.play();
+            lowTimePlayed = true;
+        }
+    }
+
+    statusElement.innerHTML = statusText;
+    highlightKing();
+    if (game.game_over()) {
+        stockfish.postMessage('stop');
+    }
+}
+
+function onDragStart(source, piece) {
+    if (game.game_over() || (isTwoPlayerMode && (whiteTime <= 0 || blackTime <= 0))) return false;
+    highlightMoves(source);
+    if (isTwoPlayerMode) return true;
+    return piece[0] === playerColor && game.turn() === playerColor;
+}
+
+function onDrop(source, target) {
+    const move = game.move({
+        from: source,
+        to: target,
+        promotion: 'q'
+    });
+
+    if (move === null) return 'snapback';
+
+    if (isTwoPlayerMode && game.turn() === 'w' && !hasBlackMoved) {
+        hasBlackMoved = true;
+    }
+
+    $('.square-55d63').removeClass('move-dot white');
+    if (move.captured) {
+        if (captureSound) captureSound.play();
+    } else {
+        if (moveSound) moveSound.play();
+    }
+
+    updateStatus();
+    if (isTwoPlayerMode) updateTimersDisplay();
+    updateMoveHistory(move);
+    
+    if (isTwoPlayerMode) {
+        startTimers();
+    }
+
+    if (!isTwoPlayerMode && game.turn() !== playerColor) {
+        stockfish.postMessage('position fen ' + game.fen());
+        stockfish.postMessage('go depth ' + aiDepth);
+    }
+
+    return true;
+}
+
+function onSnapEnd() {
+    board.position(game.fen());
+}
+
+function makeAIMove(move) {
+    const aiMove = game.move({
+        from: move.substring(0, 2),
+        to: move.substring(2, 4),
+        promotion: move.length > 4 ? move[4] : undefined
+    });
+    board.position(game.fen());
+    if (aiMove.captured) {
+        if (captureSound) captureSound.play();
+    } else {
+        if (moveSound) moveSound.play();
+    }
+    updateStatus();
+    updateMoveHistory(game.history({ verbose: true }).pop());
+}
+
+function findKingPosition(color) {
+    const boardState = game.board();
+    for (let i = 0; i < 8; i++) {
+        for (let j = 0; j < 8; j++) {
+            const piece = boardState[i][j];
+            if (piece && piece.type === 'k' && piece.color === color) {
+                return String.fromCharCode(97 + j) + (8 - i);
+            }
+        }
+    }
+    return null;
+}
+
+function highlightKing() {
+    $('.square-55d63').removeClass('check-highlight');
+    const color = game.turn();
+    const kingSquare = findKingPosition(color);
+
+    if (kingSquare) {
+        const $square = $(`#board .square-${kingSquare}`);
+        if (game.in_check() || game.in_checkmate()) {
+            $square.addClass('check-highlight');
+        }
+    }
+}
+
+function highlightMoves(source) {
+    $('.square-55d63').removeClass('move-dot white');
+    if (showMoveHighlights) {
+        const moves = game.moves({ square: source, verbose: true });
+        moves.forEach(move => {
+            const targetSquare = move.to;
+            const $target = $(`#board .square-${targetSquare}`);
+            const piece = game.get(targetSquare);
+            if (piece && piece.color === 'b') {
+                $target.addClass('move-dot white');
+            } else {
+                $target.addClass('move-dot');
+            }
+        });
+    }
+}
+
+function toggleTheme() {
+    isLightTheme = !isLightTheme;
+    document.body.classList.toggle('light-theme', isLightTheme);
+    document.getElementById('theme-btn').textContent = isLightTheme ? 'Тёмная тема' : 'Светлая тема';
+}
+
+function toggleSettingsMenu() {
+    const settingsMenu = document.getElementById('settings-menu');
+    settingsMenu.style.display = settingsMenu.style.display === 'block' ? 'none' : 'block';
+}
+
+function toggleMoveHighlight() {
+    showMoveHighlights = !showMoveHighlights;
+    document.getElementById('toggle-moves').textContent = `Показывать возможные ходы: ${showMoveHighlights ? 'Вкл' : 'Выкл'}`;
+}
+
+function updateMoveHistory(move) {
+    const historyDiv = document.getElementById('move-history');
+    const moveNumber = Math.ceil(game.history().length / 2);
+    const isWhite = game.history().length % 2 === 1;
+    
+    if (isWhite) {
+        historyDiv.innerHTML += `<div>${moveNumber}. ${move.san}</div>`;
+    } else {
+        const lastMove = historyDiv.lastChild;
+        lastMove.textContent += ` ${move.san}`;
+    }
+    historyDiv.scrollTop = historyDiv.scrollHeight;
+}
+
+function startTimers() {
+    if (!isTwoPlayerMode) return;
+
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        if (game.turn() === 'b') {
+            blackTime--;
+        }
+        if (game.turn() === 'w' && hasBlackMoved) {
+            whiteTime--;
+        }
+        
+        if (whiteTime <= 0 || blackTime <= 0) {
+            stopTimers();
+            updateStatus();
+            return;
+        }
+        
+        updateTimersDisplay();
+        updateStatus();
+    }, 1000);
+}
+
+function updateTimersDisplay() {
+    document.getElementById('white-timer').textContent = `Белые: ${formatTime(whiteTime)}`;
+    document.getElementById('black-timer').textContent = `Черные: ${formatTime(blackTime)}`;
+}
+
+function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+}
+
+function stopTimers() {
+    clearInterval(timerInterval);
+    lowTimePlayed = false;
+}
+
+function startTwoPlayerGame() {
+    isTwoPlayerMode = true;
+    playerColor = 'w';
+    document.getElementById('menu-container').style.display = 'none';
+    document.getElementById('difficulty-menu').style.display = 'none';
+    document.getElementById('game-container').style.display = 'block';
+    document.getElementById('black-timer').style.display = 'block';
+    document.getElementById('white-timer').style.display = 'block';
+    newGame();
+    board.orientation('white');
+}
+
+function showDifficultyMenu() {
+    document.getElementById('menu-container').style.display = 'none';
+    document.getElementById('game-container').style.display = 'none';
+    document.getElementById('difficulty-menu').style.display = 'block';
+    updateDifficultyDescription();
+}
+
+function startAIGame(color) {
+    isTwoPlayerMode = false;
+    playerColor = color;
+    const level = parseInt(document.getElementById('difficulty-slider').value);
+    aiSkillLevel = Math.round((level - 1) * 20 / 19);
+    aiDepth = level;
+    document.getElementById('difficulty-menu').style.display = 'none';
+    document.getElementById('game-container').style.display = 'block';
+    document.getElementById('white-timer').style.display = 'none';
+    document.getElementById('black-timer').style.display = 'none';
+    newGame();
+    board.orientation(playerColor === 'w' ? 'white' : 'black');
+    stockfish.postMessage('setoption name Skill Level value ' + aiSkillLevel);
+    if (playerColor === 'b') {
+        stockfish.postMessage('position startpos');
+        stockfish.postMessage('go depth ' + aiDepth);
+    }
+}
+
+function backToMenu() {
+    stopTimers();
+    document.getElementById('game-container').style.display = 'none';
+    document.getElementById('difficulty-menu').style.display = 'none';
+    document.getElementById('settings-menu').style.display = 'none';
+    document.getElementById('menu-container').style.display = 'block';
+    document.getElementById('move-history').innerHTML = '<h3>История ходов</h3>';
+    game.reset();
+    board.start();
+    board.orientation('white');
+}
+
+function undoMove() {
+    game.undo();
+    board.position(game.fen());
+    updateStatus();
+    if (isTwoPlayerMode) updateTimersDisplay();
+}
+
+function newGame() {
+    game.reset();
+    board.start();
+    whiteTime = 600;
+    blackTime = 600;
+    hasBlackMoved = false;
+    lowTimePlayed = false;
+    updateStatus();
+    if (isTwoPlayerMode) updateTimersDisplay();
+    document.getElementById('move-history').innerHTML = '<h3>История ходов</h3>';
+    stopTimers();
+    if (isTwoPlayerMode) startTimers();
+    stockfish.postMessage('ucinewgame');
+    stockfish.postMessage('position startpos');
+}
+
+function updateDifficultyDescription() {
+    const level = parseInt(document.getElementById('difficulty-slider').value);
+    let description = '';
+
+    switch(level) {
+        case 1:
+            description = "Новичок: случайные ходы, глубина 1.";
+            break;
+        case 2: case 3: case 4:
+            description = `Любитель ${level}: слабая игра, глубина ${level}.`;
+            break;
+        case 5: case 6: case 7:
+            description = `Уверенный ${level}: осмысленные ходы, глубина ${level}.`;
+            break;
+        case 8: case 9: case 10:
+            description = `Средний ${level}: уровень любителя, глубина ${level}.`;
+            break;
+        case 11: case 12: case 13:
+            description = `Продвинутый ${level}: уверенная игра, глубина ${level}.`;
+            break;
+        case 14: case 15: case 16:
+            description = `Клубный ${level}: сильный любитель, глубина ${level}.`;
+            break;
+        case 17: case 18: case 19:
+            description = `Эксперт ${level}: мастерская игра, глубина ${level}.`;
+            break;
+        case 20:
+            description = "Мастер: максимальная сила, глубина 20.";
+            break;
+    }
+
+    document.getElementById('difficulty-description').textContent = description;
+}
+
+// Инициализация
+document.getElementById('menu-container').style.display = 'block';
+updateStatus();
