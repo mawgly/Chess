@@ -460,6 +460,77 @@
             background: #768656;
             box-shadow: 0 0 10px rgba(118, 150, 86, 0.5);
         }
+
+        /* Улучшение адаптивности для мобильных устройств */
+        @media (max-width: 768px) {
+            #board {
+                width: 100%;
+                max-width: 100vw;
+                height: auto;
+            }
+
+            .game-info {
+                width: 100%;
+                max-width: 100vw;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .player-info {
+                width: 100%;
+            }
+
+            .menu {
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+
+            .menu-button {
+                width: 100%;
+                max-width: 300px;
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            header {
+                padding: 5px 0;
+            }
+            
+            .logo {
+                max-width: 60px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            #white-player, #black-player {
+                margin: 5px 0;
+                font-size: 1rem;
+            }
+        }
+
+        /* Стили для выделенных полей и возможных ходов */
+        .square-highlighted {
+            box-shadow: inset 0 0 0 3px #f7ef50;
+        }
+
+        .square-possible-move {
+            position: relative;
+        }
+
+        .square-possible-move::after {
+            content: "";
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     </style>
 </head>
 <body>
@@ -549,11 +620,46 @@
         let aiStrength = 1;
         let aiThinking = false;
         let stockfishLoaded = false;
+        let selectedSquare = null;
+        let soundsLoaded = false;
         
         // Загрузка звуков
         const moveSound = new Audio('Sound/move.mp3');
         const captureSound = new Audio('Sound/capture.mp3');
         const checkSound = new Audio('Sound/check.mp3');
+        
+        // Предзагрузка звуков для мобильных устройств
+        function preloadSounds() {
+            if (soundsLoaded) return;
+            
+            // Функция для предзагрузки одного звука
+            function preloadSound(sound) {
+                sound.load();
+                sound.volume = 0.7; // Уменьшаем громкость
+                // Добавляем пустой обработчик для предотвращения ошибок
+                sound.addEventListener('error', () => console.warn('Ошибка загрузки звука'));
+            }
+            
+            preloadSound(moveSound);
+            preloadSound(captureSound);
+            preloadSound(checkSound);
+            
+            soundsLoaded = true;
+        }
+        
+        // Функция для воспроизведения звука, которая учитывает ограничения мобильных устройств
+        function playSound(sound) {
+            if (!soundsLoaded) preloadSounds();
+            
+            // Пробуем воспроизвести звук, игнорируя возможные ошибки
+            const playPromise = sound.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.warn('Не удалось воспроизвести звук:', error);
+                });
+            }
+        }
         
         // Функция для асинхронной загрузки Stockfish
         function loadStockfish() {
@@ -596,7 +702,7 @@
                         updateStatus();
                         
                         // Воспроизводим звук хода
-                        moveSound.play();
+                        playSound(moveSound);
                     }
                 }
             };
@@ -618,7 +724,7 @@
             // Проверка на шах, мат или пат
             if (game.in_checkmate()) {
                 status = 'Игра окончена, ' + moveColor + ' получили мат.';
-                checkSound.play();
+                playSound(checkSound);
                 
                 if (isOnlineMode && currentGameId) {
                     let winner = game.turn() === 'w' ? 'black_player' : 'white_player';
@@ -640,7 +746,7 @@
                 status = moveColor + ' ходят';
                 if (game.in_check()) {
                     status += ', ' + moveColor + ' под шахом!';
-                    checkSound.play();
+                    playSound(checkSound);
                 }
             }
 
@@ -652,6 +758,126 @@
             if (!isOnlineMode && !isAiMode) return true;
             if (isAiMode) return game.turn() === playerColor;
             return (game.turn() === 'w' && playerColor === 'w') || (game.turn() === 'b' && playerColor === 'b');
+        }
+        
+        // Функция для обработки клика по доске - новый альтернативный способ хода
+        function handleBoardClick(square) {
+            // Если уже есть выбранная клетка
+            if (selectedSquare) {
+                // Пробуем сделать ход с выбранной клетки на указанную
+                const move = game.move({
+                    from: selectedSquare,
+                    to: square,
+                    promotion: 'q' // Всегда ферзь при превращении пешки
+                });
+                
+                // Очищаем все подсветки
+                clearHighlights();
+                
+                // Если ход невозможен
+                if (move === null) {
+                    // Проверяем, нажал ли игрок на свою фигуру
+                    const piece = game.get(square);
+                    if (piece && piece.color === game.turn()) {
+                        // Выбираем новую фигуру
+                        selectPiece(square);
+                    } else {
+                        // Сбрасываем выбор
+                        selectedSquare = null;
+                    }
+                    return;
+                }
+                
+                // Воспроизведение звука
+                if (move.captured) {
+                    playSound(captureSound);
+                } else {
+                    playSound(moveSound);
+                }
+                
+                // Обновляем доску и статус
+                board.position(game.fen());
+                updateStatus();
+                selectedSquare = null;
+                
+                // Если это онлайн-игра, обновляем состояние на сервере
+                if (isOnlineMode && currentGameId) {
+                    isMovePending = true;
+                    
+                    // Временно приостанавливаем опрос сервера
+                    clearInterval(gameUpdateInterval);
+                    
+                    $.ajax({
+                        url: `${SUPABASE_URL}/rest/v1/games?id=eq.${currentGameId}`,
+                        type: 'PATCH',
+                        headers: {
+                            'apikey': SUPABASE_KEY,
+                            'Content-Type': 'application/json',
+                            'Prefer': 'return=minimal'
+                        },
+                        data: JSON.stringify({
+                            fen: game.fen(),
+                            turn: game.turn(),
+                            move_history: JSON.stringify(game.history())
+                        }),
+                        success: function() {
+                            console.log("Ход успешно отправлен на сервер");
+                            isMovePending = false;
+                            
+                            // Возобновляем опрос сервера через небольшую задержку
+                            setTimeout(function() {
+                                startGameUpdates();
+                            }, 500);
+                        },
+                        error: function(error) {
+                            console.error('Ошибка обновления игры:', error);
+                            isMovePending = false;
+                            startGameUpdates();
+                        }
+                    });
+                }
+                
+                // Если это игра с ИИ, запускаем ход ИИ
+                if (isAiMode && !game.game_over()) {
+                    setTimeout(makeAiMove, 500);
+                }
+                
+                return;
+            }
+            
+            // Если нет выбранной клетки, проверяем, есть ли на клетке фигура
+            const piece = game.get(square);
+            if (piece && piece.color === game.turn() && isPlayerTurn()) {
+                selectPiece(square);
+            }
+        }
+        
+        // Функция для выбора фигуры
+        function selectPiece(square) {
+            // Очищаем все предыдущие подсветки
+            clearHighlights();
+            
+            selectedSquare = square;
+            
+            // Подсвечиваем выбранную клетку
+            $('.square-' + square).addClass('square-highlighted');
+            
+            // Получаем все возможные ходы для выбранной фигуры
+            const moves = game.moves({
+                square: square,
+                verbose: true
+            });
+            
+            // Подсвечиваем все возможные ходы
+            moves.forEach(move => {
+                $('.square-' + move.to).addClass('square-possible-move');
+            });
+        }
+        
+        // Функция для очистки всех подсветок
+        function clearHighlights() {
+            $('.square-highlighted').removeClass('square-highlighted');
+            $('.square-possible-move').removeClass('square-possible-move');
         }
 
         // Обработчик хода (onDrop)
@@ -676,9 +902,9 @@
 
             // Воспроизведение звука
             if (move.captured) {
-                captureSound.play();
+                playSound(captureSound);
             } else {
-                moveSound.play();
+                playSound(moveSound);
             }
             
             // Запоминаем текущий FEN после хода
@@ -741,12 +967,28 @@
             draggable: true,
             position: 'start',
             onDrop: onDrop,
-            pieceTheme: 'img/chesspieces/{piece}.png'
+            pieceTheme: 'img/chesspieces/{piece}.png',
+            onSquareClick: handleBoardClick
         };
 
         // Инициализация доски
         board = Chessboard('board', boardConfig);
         updateStatus();
+        
+        // Инициализация обработчиков кликов, если библиотека не поддерживает onSquareClick напрямую
+        if (!board.onSquareClick) {
+            $('#board').on('click', '.square-55d63', function() {
+                const square = $(this).data('square');
+                if (square) {
+                    handleBoardClick(square);
+                }
+            });
+        }
+        
+        // Предзагрузка звуков при первом клике пользователя
+        $(document).one('click', function() {
+            preloadSounds();
+        });
 
         // Обработчики переключения режимов игры
         $('#local-game-btn').click(function() {
@@ -1126,7 +1368,7 @@
                                 board.position(gameData.fen, false);
                                 
                                 // Воспроизводим звук хода
-                                moveSound.play();
+                                playSound(moveSound);
                                 
                                 // Обновляем статус
                                 updateStatus();
